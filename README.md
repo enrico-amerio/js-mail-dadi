@@ -27,3 +27,6 @@ Buon lavoro e buon divertimento!
 4. Genero un messaggio relativo al risultato del controllo.
 
 ## Svolgimento Gioco dei dadi 
+1. Genero due numeri random e li stampo in pagina
+2. confronto i due numeri per vedere qual è il più alto 
+3. stampo in pagina il vincitore
