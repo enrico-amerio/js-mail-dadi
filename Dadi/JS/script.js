@@ -15,12 +15,12 @@ btnPlay.addEventListener("click", function() {
   console.log(userNumber, cpuNumber)
   
   document.getElementById('userDice').innerHTML = `
-  Il numero estratto per ${userName} è <b>${cpuNumber}</b>
+  Il numero estratto per ${userName} è <b>${userNumber}</b>
   
   
   `
   document.getElementById('computerDice').innerHTML = `
-  Il numero estratto per Computer è <b>${userNumber}</b>
+  Il numero estratto per Computer è <b>${cpuNumber}</b>
   
   
   `
@@ -31,7 +31,7 @@ btnPlay.addEventListener("click", function() {
 
     
     `
-  }else if(cpuNumber > userNumber) {
+  }else if(userNumber < cpuNumber) {
     document.getElementById('result').innerHTML = `
     Ci dispiace ${userName}, questa volta ha vinto il Computer!
     <img class="emoji" src="https://media1.tenor.com/m/nRcjFCeXtPIAAAAC/sad-banana.gif" alt="">
