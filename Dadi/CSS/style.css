@@ -1,0 +1,16 @@
+body{
+  background-image: url(https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGhma25sdnN4bzRmaDJzY2d6cnRrOWdzdnFsZ29qejRnOW4wOG4xMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oGRFlpAW4sIHA02NW/giphy.gif);
+}
+.mycontainer{
+background-color: rgba(255, 255, 255, 0.8);
+border-radius: 20px;
+height: 80vh;
+margin-top: 10vh;
+}
+.result{
+  font-size: 50px;
+  font-weight: 500;
+}
+.emoji{
+  width:90px;
+}
