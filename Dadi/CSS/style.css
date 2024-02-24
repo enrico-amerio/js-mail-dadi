@@ -72,6 +72,11 @@ main, .card-container, .welcome, .card-title, .points, .output-message, .btn-con
   width: 100px;
 }
 
+.counter{
+  display: flex;
+  font-size: 100px;
+}
+
 .btn{
   display: inline-block;
   outline: 0;

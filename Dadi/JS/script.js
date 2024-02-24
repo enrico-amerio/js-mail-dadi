@@ -1,7 +1,10 @@
-const userName = prompt('Come ti chiami?')
-const btnPlay = document.getElementById('press-to-play')
-const imgPlayer = document.getElementById('img-player')
-const imgComputer = document.getElementById('img-computer')
+const userName = prompt('Come ti chiami?');
+const btnPlay = document.getElementById('press-to-play');
+const imgPlayer = document.getElementById('img-player');
+const imgComputer = document.getElementById('img-computer');
+let playerScore = 0;
+let computerScore = 0;
+const audio = new Audio('audio/dice-142528.mp3');
 
 document.getElementById('player-name').innerHTML = `
 ${userName}
@@ -10,9 +13,9 @@ ${userName}
 
 
 btnPlay.addEventListener("click", function() {
- 
-   imgPlayer.setAttribute('src',`img/dice-game.gif` )
-   imgComputer.setAttribute('src',`img/dice-game.gif` )
+  imgPlayer.setAttribute('src',`img/dice-game.gif` )
+  imgComputer.setAttribute('src',`img/dice-game.gif` )
+  audio.play()
    
   
   setTimeout(shuffle, 900);
@@ -39,6 +42,9 @@ btnPlay.addEventListener("click", function() {
       <img class="emoji" src="https://media.tenor.com/JMzBeLgNaSoAAAAi/banana-dance.gif" alt="">
       
       `
+      playerScore++
+      document.getElementById('player-score').innerHTML = `${playerScore}`
+      
 
     }else if(userNumber < cpuNumber) {
       document.getElementById('result').innerHTML = `
@@ -46,6 +52,8 @@ btnPlay.addEventListener("click", function() {
       <img class="emoji" src="https://media.tenor.com/P0SmYCRubbAAAAAj/sad.gif" alt="">
       
       `
+      computerScore++
+      document.getElementById('computer-score').innerHTML = `${computerScore}`
       
     } else {
       document.getElementById('result').innerHTML = `
