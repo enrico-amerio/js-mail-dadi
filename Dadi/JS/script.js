@@ -1,50 +1,62 @@
-
 const userName = prompt('Come ti chiami?')
 const btnPlay = document.getElementById('press-to-play')
+const imgPlayer = document.getElementById('img-player')
+const imgComputer = document.getElementById('img-computer')
 
-document.querySelector('h1').innerHTML = `
-    Benvenuto ${userName}!
-    
-    `
+document.getElementById('player-name').innerHTML = `
+${userName}
 
+`
 
 
 btnPlay.addEventListener("click", function() {
-  const userNumber = Math.floor(Math.random() * 6) + 1;
-  const cpuNumber = Math.floor(Math.random() * 6) + 1;
-  console.log(userNumber, cpuNumber)
+ 
+   imgPlayer.setAttribute('src',`img/dice-game.gif` )
+   imgComputer.setAttribute('src',`img/dice-game.gif` )
+   
   
-  document.getElementById('userDice').innerHTML = `
-  Il numero estratto per ${userName} è <b>${userNumber}</b>
+  setTimeout(shuffle, 900);
+  function shuffle() {
+    const userNumber = Math.floor(Math.random() * 6) + 1;
+    const cpuNumber = Math.floor(Math.random() * 6) + 1;
+    console.log(userNumber, cpuNumber)
+    imgPlayer.setAttribute('src',`img/${userNumber}.png` )
+    imgComputer.setAttribute('src',`img/${cpuNumber}.png` )
   
-  
-  `
-  document.getElementById('computerDice').innerHTML = `
-  Il numero estratto per Computer è <b>${cpuNumber}</b>
-  
-  
-  `
-  if (userNumber > cpuNumber) {
-    document.getElementById('result').innerHTML = `
-    Complimenti ${userName}, hai vinto contro il Computer!
-    <img class="emoji" src="https://static.wixstatic.com/media/e6f56d_a2b47380e8504300bfb2844e4a8a5159~mv2.gif" alt="">
+    document.getElementById('user-dice').innerHTML = `
+    Punteggio ${userName}: <b>${userNumber}</b>
 
+    `
+
+    document.getElementById('computer-dice').innerHTML = `
+    Punteggio Computer: <b>${cpuNumber}</b>
+
+    `
+
+    if (userNumber > cpuNumber) {
+      document.getElementById('result').innerHTML = `
+      Complimenti ${userName}, hai vinto contro il Computer!
+      <img class="emoji" src="https://media.tenor.com/JMzBeLgNaSoAAAAi/banana-dance.gif" alt="">
+      
+      `
+
+    }else if(userNumber < cpuNumber) {
+      document.getElementById('result').innerHTML = `
+      Ci dispiace ${userName}, questa volta ha vinto il Computer!
+      <img class="emoji" src="https://media.tenor.com/P0SmYCRubbAAAAAj/sad.gif" alt="">
+      
+      `
+      
+    } else {
+      document.getElementById('result').innerHTML = `
+      C\'eri quasi ${userName}!
+      La partita termina con un pareggio
+      <img class="emoji" src="https://media.tenor.com/znj8eBpcBcgAAAAi/banana-yellow.gif" alt="">
+      
+      `
+    }
+    btnPlay.innerText = "Gioca Ancora"
     
-    `
-  }else if(userNumber < cpuNumber) {
-    document.getElementById('result').innerHTML = `
-    Ci dispiace ${userName}, questa volta ha vinto il Computer!
-    <img class="emoji" src="https://media1.tenor.com/m/nRcjFCeXtPIAAAAC/sad-banana.gif" alt="">
-
-    `
-  } else {
-    document.getElementById('result').innerHTML = `
-    C\'eri quasi ${userName}!
-    La partita termina con un pareggio
-    <img class="emoji" src="https://media1.tenor.com/m/xsvqUaK8Z2AAAAAC/sport-exercise.gif" alt="">
-
-    `
   }
-  btnPlay.innerText = "Gioca Ancora"
   
 });
