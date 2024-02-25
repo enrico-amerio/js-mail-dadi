@@ -17,12 +17,12 @@ ${userName}
 `
 
 
-btnPlay.addEventListener("click", function() {
+btnPlay.addEventListener("click", function(){
   let playerBet = +document.getElementById('player-bet').value;
   const cpuBet = playerBet;
   const totalBet = cpuBet + playerBet;
   console.log(playerBet, cpuBet, totalBet)
-  if (cpuCoins > 0) {
+  
     if (playerBet > 0 && playerCoins > 0 && playerBet <= playerCoins && cpuCoins > 0 && cpuBet <= cpuCoins ) {
       
       imgPlayer.setAttribute('src',`img/dice-game.gif` )
@@ -127,6 +127,9 @@ btnPlay.addEventListener("click", function() {
         
       }
       
+    }else if(cpuCoins == 0){
+      alert("Il computer ha finito le monete ed è stato sconfitto! Ricarica la pagina per giocare di nuovo");
+
     }else if ( playerCoins == 0){
       alert("Sembra che tu abbia finito le monete! Ricarica la pagina per giocare di nuovo");
   
@@ -140,10 +143,7 @@ btnPlay.addEventListener("click", function() {
       alert("Inserire una scommessa valida per giocare!");
   
     }
-    
-  }else{
-    alert("Il computer ha finito le monete ed è stato sconfitto! Ricarica la pagina per giocare di nuovo");
-
-  }
+})   
   
-});
+  
+
