@@ -7,7 +7,7 @@
 body{
   font-family: "Bebas Neue", sans-serif;
   background-image: linear-gradient(to top, #5468FF 0%, #330867 100%);
-  font-size: 15px;
+  font-size: 20px;
 }
 
 main{
@@ -28,14 +28,23 @@ main{
   height: 10%;
 }
 
-main, .card-container, .welcome, .card-title, .points, .output-message, .btn-container, .dice-area{
+.middle-section, .cash, main, .card-container, .welcome, .card-title, .points, .output-message, .btn-container, .dice-area{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.middle-section{
+  flex-direction: column;
+}
 
-.card-container, .welcome, .card-title, .points, .output-message, .btn-container, .dice-area{
+.card-container, .welcome, .card-title,  .output-message, .btn-container, .dice-area{
   padding: 18px 0;
+}
+.points{
+  padding: 18px 0 5px 0;
+}
+.cash{
+  padding-bottom: 18px;
 }
 .welcome, .output-message{
   height: 20%;
@@ -59,7 +68,7 @@ main, .card-container, .welcome, .card-title, .points, .output-message, .btn-con
   background: radial-gradient( 100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100% );
 }
 
-.card-title, .points {
+.cash,.card-title, .points {
   height: 20%;
   letter-spacing: 2px;
 }
@@ -110,4 +119,42 @@ main, .card-container, .welcome, .card-title, .points, .output-message, .btn-con
 .output-message{
   font-size: 30px;
   
+}
+.bet-input{
+  margin-top: 20px;
+  width:200px
+}
+#player-bet{
+  box-shadow: inset #005fdb 0 0 0 2px;
+  border: 0;
+  background: rgba(0, 0, 0, 0);
+  appearance: none;
+  width: 100%;
+  position: relative;
+  border-radius: 3px;
+  padding: 9px 12px;
+  line-height: 1.4;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  height: 40px;
+  transition: all .2s ease;
+  text-align: center;
+}
+#player-bet::placeholder {
+  color: black;
+  opacity: 1; 
+}
+#player-bet::-ms-input-placeholder { 
+  color: black;
+}
+
+#player-bet:hover{
+  box-shadow: 0 0 0 0 #fff inset, #89E5FF 0 0 0 2px;
+}
+
+#player-bet:focus{
+  background: rgba(255, 255, 255, 0.3);
+  outline: 0;
+  box-shadow: 0 0 0 0 #fff inset, #89E5FF 0 0 0 3px;
 }

@@ -22,11 +22,16 @@
             <img id="img-player" class="dice-pic" src="img/1.png" alt="">
           </div>
           <div id="user-dice" class="points "></div>
+          <div class="cash" id="player-coins">Le tue monete: 1000</div>
         </div>
-        <div class="counter">
-          <div id="player-score">0</div>
-          <div>-</div>
-          <div id="computer-score">0</div>
+        <div class="middle-section">
+          <div class="counter">
+            <div id="player-score">0</div>
+            <div>-</div>
+            <div id="computer-score">0</div>
+          </div>
+          <div id="total-bet">Posta in palio : 0</div>
+          <div class="bet-input"><input type="number" placeholder="La tua scommessa" id="player-bet"></div>
         </div>
         <div class="card">
           <div class="card-title">Computer</div>
@@ -34,12 +39,14 @@
             <img id="img-computer" class="dice-pic" src="img/1.png" alt="">
           </div>
           <div id="computer-dice" class="points "></div>
+          <div class="cash" id="cpu-coins">Le monete del computer: 1000</div>
         </div>
       </div>
       <div class="btn-container">
         <div>
-          <button id="press-to-play" class="btn">Gioca</button>
+          <button id="press-to-play" class="btn">Scommetti e Gioca</button>
         </div>
+        
       </div>
       <div id="result" class="output-message "></div>
       <script src="js/script.js"></script>
